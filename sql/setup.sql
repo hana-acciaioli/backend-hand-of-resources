@@ -2,6 +2,7 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS odd_cartoons;
 DROP TABLE IF EXISTS silly_animals;
+DROP TABLE IF EXISTS crazy_places;
 
 create table odd_cartoons (
 	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -32,3 +33,17 @@ values
  ('Aharon', 'Purple', 'Swamp deer'),
  ('Alika', 'Turquoise', 'Ferret, black-footed'),
  ('Billy', 'Green', 'Macaw, red and blue');
+
+ create table crazy_places (
+	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	latitude VARCHAR(50),
+	longitude VARCHAR(50),
+	time_zone VARCHAR(50)
+);
+insert into crazy_places (latitude, longitude, time_zone) 
+values 
+(62.3078106, 22.0530364, 'Europe/Helsinki'),
+ (58.4536208, 33.3707377, 'Europe/Moscow'),
+ (11.9704485, -86.0886366, 'America/Managua'),
+ (60.053638, 29.9846651, 'Europe/Moscow'),
+ (51.3854243, 20.9619096, 'Europe/Warsaw');
