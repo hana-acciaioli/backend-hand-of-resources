@@ -18,6 +18,30 @@ describe('odd-cartoons routes', () => {
           "id": "1",
           "name": "The rigid nerd",
         },
+        Object {
+          "avatar": "https://robohash.org/ipsumdelenitiid.png?size=50x50&set=set1",
+          "catch_phrase": "Devolved interactive contingency",
+          "id": "2",
+          "name": "The pessimst",
+        },
+        Object {
+          "avatar": "https://robohash.org/istequibusdamquod.png?size=50x50&set=set1",
+          "catch_phrase": "Adaptive asynchronous projection",
+          "id": "3",
+          "name": "The woke analyst",
+        },
+        Object {
+          "avatar": "https://robohash.org/molestiasdebitisesse.png?size=50x50&set=set1",
+          "catch_phrase": "Assimilated web-enabled orchestration",
+          "id": "4",
+          "name": "The troll",
+        },
+        Object {
+          "avatar": "https://robohash.org/rationereprehenderittotam.png?size=50x50&set=set1",
+          "catch_phrase": "Future-proofed demand-driven workforce",
+          "id": "5",
+          "name": "The workoholic manager",
+        },
       ]
     `);
   });

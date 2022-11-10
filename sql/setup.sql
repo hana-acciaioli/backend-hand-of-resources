@@ -9,9 +9,10 @@ create table odd_cartoons (
 	avatar VARCHAR
 );
 
-INSERT INTO odd_cartoons(name, catch_phrase, avatar)
-values ('The rigid nerd','Mandatory user-facing protocol', 'https://robohash.org/abomnisassumenda.png?size=50x50&set=set1');
-values ( 'The pessimst','Devolved interactive contingency', 'https://robohash.org/ipsumdelenitiid.png?size=50x50&set=set1');
-values ( 'The woke analyst','Adaptive asynchronous projection', 'https://robohash.org/istequibusdamquod.png?size=50x50&set=set1');
-values ( 'The troll','Assimilated web-enabled orchestration', 'https://robohash.org/molestiasdebitisesse.png?size=50x50&set=set1');
-values ( 'The workoholic manager','Future-proofed demand-driven workforce', 'https://robohash.org/rationereprehenderittotam.png?size=50x50&set=set1');
+INSERT INTO odd_cartoons(name, catch_phrase, avatar) 
+VALUES
+ ('The rigid nerd','Mandatory user-facing protocol', 'https://robohash.org/abomnisassumenda.png?size=50x50&set=set1'),
+ ( 'The pessimst','Devolved interactive contingency', 'https://robohash.org/ipsumdelenitiid.png?size=50x50&set=set1'),
+ ( 'The woke analyst','Adaptive asynchronous projection', 'https://robohash.org/istequibusdamquod.png?size=50x50&set=set1'),
+ ( 'The troll','Assimilated web-enabled orchestration', 'https://robohash.org/molestiasdebitisesse.png?size=50x50&set=set1'),
+ ( 'The workoholic manager','Future-proofed demand-driven workforce', 'https://robohash.org/rationereprehenderittotam.png?size=50x50&set=set1');
