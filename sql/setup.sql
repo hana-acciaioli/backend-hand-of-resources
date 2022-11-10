@@ -19,6 +19,7 @@ VALUES
  ( 'The workoholic manager','Future-proofed demand-driven workforce', 'https://robohash.org/rationereprehenderittotam.png?size=50x50&set=set1');
 
  create table silly_animals (
+	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	name VARCHAR(50),
 	color VARCHAR(50),
 	animal_type VARCHAR(50)
