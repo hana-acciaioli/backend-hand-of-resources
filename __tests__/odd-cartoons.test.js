@@ -59,6 +59,14 @@ describe('odd-cartoons routes', () => {
     });
   });
 
+  it('DELETE /cartoons/:id should delete a cartoon', async () => {
+    const resp = await request(app).delete('/cartoons/1');
+    expect(resp.status).toBe(200);
+
+    const cartoonResp = await request(app).get('/cartoons/1');
+    expect(cartoonResp.status).toBe(404);
+  });
+
   it('PUT /cartoons/:id should update an existing cartoon', async () => {
     const resp = await request(app).put('/cartoons/1').send({
       name: 'The control freak IT person',
