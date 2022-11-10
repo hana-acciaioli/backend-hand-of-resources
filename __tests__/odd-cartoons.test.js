@@ -36,9 +36,7 @@ describe('odd-cartoons routes', () => {
   });
 
   it('PUT /cartoons/:id should update an existing cartoon', async () => {
-    const resp = await (
-      await request(app).put('/cartoons/1')
-    ).setEncoding({
+    const resp = await request(app).put('/cartoons/1').send({
       name: 'The control freak IT person',
     });
     expect(resp.status).toBe(200);
