@@ -7,7 +7,7 @@ describe('odd-cartoons routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it('/odd-cartoons should return list of cartoon characters', async () => {
+  it('GET /cartoons should return list of cartoon characters', async () => {
     const resp = await request(app).get('/cartoons');
     expect(resp.status).toBe(200);
     expect(resp.body).toMatchInlineSnapshot(`
@@ -20,6 +20,19 @@ describe('odd-cartoons routes', () => {
         },
       ]
     `);
+  });
+
+  it('POST /cartoons should create a new cartoon', async () => {
+    const newCartoon = {
+      name: 'The internet hype entrepreneur',
+      catch_phrase: 'Implemented attitude-oriented internet solution',
+      avatar: 'https://robohash.org/possimuseosnumquam.png?size=50x50&set=set1',
+    };
+    const resp = await request(app).post('/cartoons').send(newCartoon);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newCartoon,
+    });
   });
   afterAll(() => {
     pool.end();
