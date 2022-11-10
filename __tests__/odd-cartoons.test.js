@@ -34,6 +34,17 @@ describe('odd-cartoons routes', () => {
       ...newCartoon,
     });
   });
+
+  it('PUT /cartoons/:id should update an existing cartoon', async () => {
+    const resp = await (
+      await request(app).put('/cartoons/1')
+    ).setEncoding({
+      name: 'The control freak IT person',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.name).toBe('The control freak IT person');
+  });
+
   afterAll(() => {
     pool.end();
   });
