@@ -7,6 +7,17 @@ describe('odd-cartoons routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
+  it('GET /cartoons/1 should return a detailed object of cartoon 1', async () => {
+    const resp = await request(app).get('/cartoons/1');
+    expect(resp.body).toEqual([
+      {
+        avatar: 'https://robohash.org/abomnisassumenda.png?size=50x50&set=set1',
+        catch_phrase: 'Mandatory user-facing protocol',
+        id: '1',
+        name: 'The rigid nerd',
+      },
+    ]);
+  });
   it('GET /cartoons should return list of cartoon characters', async () => {
     const resp = await request(app).get('/cartoons');
     expect(resp.status).toBe(200);
