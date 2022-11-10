@@ -63,6 +63,19 @@ describe('silly-cartoons routes', () => {
       ]
     `);
   });
+
+  it('POST /animals should create a new animal', async () => {
+    const newAnimal = {
+      name: 'Fransisco',
+      color: 'Blue',
+      animal_type: 'Burmese brown mountain tortoise',
+    };
+    const resp = await request(app).post('/animals').send(newAnimal);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newAnimal,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
