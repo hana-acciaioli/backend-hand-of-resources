@@ -76,6 +76,12 @@ describe('silly-cartoons routes', () => {
       ...newAnimal,
     });
   });
+  it('DELETE /animals/:id should delete an animal', async () => {
+    const resp = await request(app).delete('/animals/1');
+    expect(resp.status).toBe(200);
+    const animalResp = await request(app).get('/animals/1');
+    expect(animalResp.status).toBe(404);
+  });
   it('PUT /animals/:id should update an existing animal', async () => {
     const resp = await request(app).put('/animals/1').send({
       name: 'Jeffrey',
