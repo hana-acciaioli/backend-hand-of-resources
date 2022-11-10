@@ -8,6 +8,17 @@ describe('silly-cartoons routes', () => {
     return setup(pool);
   });
 
+  it('GET /animals/:id should return a detailed object of animal 1', async () => {
+    const resp = await request(app).get('/animals/1');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      animal_type: 'Seven-banded armadillo',
+      color: 'Khaki',
+      id: '1',
+      name: 'Bell',
+    });
+  });
+
   it('GET /animals should return a list of animals', async () => {
     const resp = await request(app).get('/animals');
     expect(resp.status).toBe(200);
