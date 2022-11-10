@@ -8,9 +8,18 @@ describe('odd-cartoons routes', () => {
     return setup(pool);
   });
   it('/odd-cartoons should return list of cartoon characters', async () => {
-    const resp = await request(app).get('/odd-cartoons');
+    const resp = await request(app).get('/cartoons');
     expect(resp.status).toBe(200);
-    expect(resp.body).toMatchInlineSnapshot();
+    expect(resp.body).toMatchInlineSnapshot(`
+      Array [
+        Object {
+          "avatar": "https://robohash.org/abomnisassumenda.png?size=50x50&set=set1",
+          "catch_phrase": "Mandatory user-facing protocol",
+          "id": "1",
+          "name": "The rigid nerd",
+        },
+      ]
+    `);
   });
   afterAll(() => {
     pool.end();
