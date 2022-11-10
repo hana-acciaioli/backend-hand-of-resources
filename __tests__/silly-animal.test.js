@@ -76,6 +76,13 @@ describe('silly-cartoons routes', () => {
       ...newAnimal,
     });
   });
+  it('PUT /animals/:id should update an existing animal', async () => {
+    const resp = await request(app).put('/animals/1').send({
+      name: 'Jeffrey',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.name).toBe('Jeffrey');
+  });
   afterAll(() => {
     pool.end();
   });
