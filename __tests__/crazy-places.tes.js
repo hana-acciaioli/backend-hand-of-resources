@@ -7,6 +7,16 @@ describe('crazy-places routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
+  it('GET /places/1', async () => {
+    const resp = await request(app).get('/places/1');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: '1',
+      latitude: '62.3078106',
+      longitude: '22.0530364',
+      timeZone: 'Europe/Helsinki',
+    });
+  });
   it('GET /places should return list of places', async () => {
     const resp = await request(app).get('/places');
     expect(resp.status).toBe(200);
