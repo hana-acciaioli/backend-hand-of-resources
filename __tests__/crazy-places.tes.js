@@ -69,6 +69,14 @@ describe('crazy-places routes', () => {
     });
   });
 
+  it('DELETE /places/:id should delete a place', async () => {
+    const resp = await request(app).delete('/places/1');
+    expect(resp.status).toBe(200);
+
+    const placeResp = await request(app).get('/places/1');
+    expect(placeResp.status).toBe(404);
+  });
+
   it('PUT /places/:id should update an existing place', async () => {
     const resp = await request(app).put('/places/1').send({
       timeZone: 'America/Lima',
