@@ -55,6 +55,19 @@ describe('crazy-places routes', () => {
       ]
     `);
   });
+
+  it('POST /places should create a new place', async () => {
+    const newPlace = {
+      longitude: '-10.9207843',
+      latitude: '-76.0594972',
+      timeZone: 'America/Lima',
+    };
+    const resp = await request(app).post('/places').send(newPlace);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newPlace,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
