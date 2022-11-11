@@ -3,6 +3,7 @@
 DROP TABLE IF EXISTS odd_cartoons;
 DROP TABLE IF EXISTS silly_animals;
 DROP TABLE IF EXISTS crazy_places;
+DROP TABLE IF EXISTS used_cars;
 
 create table odd_cartoons (
 	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -47,3 +48,18 @@ values
  (11.9704485, -86.0886366, 'America/Managua'),
  (60.053638, 29.9846651, 'Europe/Moscow'),
  (51.3854243, 20.9619096, 'Europe/Warsaw');
+
+ create table used_cars (
+	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	car VARCHAR(50),
+	currency VARCHAR(50),
+	year VARCHAR(50),
+	color VARCHAR(50)
+);
+insert into used_cars (car, currency, year, color) 
+VALUES 
+('Aspire', 'Ruble', 1996, 'Turquoise'),
+('4Runner', 'Rupiah', 1994, 'Yellow'),
+('Mustang', 'Krona', 2006, 'Puce'),
+('Town & Country', 'Dollar', 2008, 'Pink'),
+('XG300', 'Yuan Renminbi', 2001, 'Turquoise');
