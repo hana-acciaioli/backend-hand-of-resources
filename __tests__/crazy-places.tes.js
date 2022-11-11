@@ -68,6 +68,14 @@ describe('crazy-places routes', () => {
       ...newPlace,
     });
   });
+
+  it('PUT /places/:id should update an existing place', async () => {
+    const resp = await request(app).put('/places/1').send({
+      timeZone: 'America/Lima',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.timeZone).toBe('America/Lima');
+  });
   afterAll(() => {
     pool.end();
   });
