@@ -60,6 +60,19 @@ describe('cars routes', () => {
       ]
     `);
   });
+  it('POST /cars should create a new car', async () => {
+    const newCar = {
+      car: 'VW Cabrio',
+      color: 'White',
+      currency: 'USD',
+      year: '1991',
+    };
+    const resp = await request(app).post('/cars').send(newCar);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newCar,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
