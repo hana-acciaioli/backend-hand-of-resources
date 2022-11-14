@@ -73,6 +73,13 @@ describe('cool-stores routes', () => {
       ...newStore,
     });
   });
+  it('PUT /stores/:id should update an existing store', async () => {
+    const resp = await request(app).put('/stores/1').send({
+      company: 'Turner and Sons',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.company).toBe('Turner and Sons');
+  });
   afterAll(() => {
     pool.end();
   });
