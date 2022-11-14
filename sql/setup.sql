@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS odd_cartoons;
 DROP TABLE IF EXISTS silly_animals;
 DROP TABLE IF EXISTS crazy_places;
 DROP TABLE IF EXISTS used_cars;
+DROP TABLE IF EXISTS cool_storesstu;
 
 create table odd_cartoons (
 	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -63,3 +64,19 @@ VALUES
 ('Mustang', 'Krona', 2006, 'Puce'),
 ('Town & Country', 'Dollar', 2008, 'Pink'),
 ('XG300', 'Yuan Renminbi', 2001, 'Turquoise');
+
+create table cool_stores (
+	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	company VARCHAR(50),
+	department VARCHAR(50),
+	item VARCHAR,
+	price VARCHAR(50)
+);
+
+insert into cool_stores (company, department, item, price) 
+values 
+('Kuvalis Group', 'Clothing', 'shoe lace', '$4.60'),
+ ('Feeney, Abbott and Bednar', 'Home', 'throw pillow', '$19.46'),
+ ('Will, Mohr and Konopelski', 'Jewelry', 'nose ring', '$2.34'),
+ ('Lueilwitz Group', 'Electronics', 'VHS camera', '$14.19'),
+ ('Upton and Sons', 'Music', 'Beach Boys', '$14.34');
