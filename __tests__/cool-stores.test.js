@@ -73,6 +73,10 @@ describe('cool-stores routes', () => {
       ...newStore,
     });
   });
+  it('DELETE /stores/:id should delete a store', async () => {
+    const resp = await request(app).delete('/stores/1');
+    expect(resp.status).toBe(200);
+  });
   it('PUT /stores/:id should update an existing store', async () => {
     const resp = await request(app).put('/stores/1').send({
       company: 'Turner and Sons',
