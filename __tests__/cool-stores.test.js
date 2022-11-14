@@ -7,6 +7,15 @@ describe('cool-stores routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
+  it('GET /stores/1 should return a detailed object of store 1', async () => {
+    const resp = await request(app).get('/stores/1');
+    expect(resp.body).toEqual({
+      department: 'Clothing',
+      id: '1',
+      item: 'shoe lace',
+      price: '$4.60',
+    });
+  });
   it('GET /stores should return a list of stores', async () => {
     const resp = await request(app).get('/stores');
     expect(resp.status).toBe(200);
