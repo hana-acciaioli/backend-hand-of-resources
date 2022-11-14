@@ -73,6 +73,13 @@ describe('cars routes', () => {
       ...newCar,
     });
   });
+  it('PUT /cars/:id should update an existing car', async () => {
+    const resp = await request(app).put('/cars/1').send({
+      car: 'Ford Transit',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.car).toBe('Ford Transit');
+  });
   afterAll(() => {
     pool.end();
   });
