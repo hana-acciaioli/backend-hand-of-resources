@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS odd_cartoons;
 DROP TABLE IF EXISTS silly_animals;
 DROP TABLE IF EXISTS crazy_places;
 DROP TABLE IF EXISTS used_cars;
-DROP TABLE IF EXISTS cool_storesstu;
+DROP TABLE IF EXISTS cool_stores;
 
 create table odd_cartoons (
 	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
