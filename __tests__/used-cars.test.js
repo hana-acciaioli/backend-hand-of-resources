@@ -7,6 +7,16 @@ describe('cars routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
+  it('GET /cars/1 should return a detailed object of car 1', async () => {
+    const resp = await request(app).get('/cars/1');
+    expect(resp.body).toEqual({
+      car: 'Aspire',
+      color: 'Turquoise',
+      currency: 'Ruble',
+      id: '1',
+      year: '1996',
+    });
+  });
   it('GET /cars should return a list of cars', async () => {
     const resp = await request(app).get('/cars');
     expect(resp.status).toBe(200);
